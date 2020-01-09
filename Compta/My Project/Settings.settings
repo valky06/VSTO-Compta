@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="ConSQLSilog" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Provider=SQLOLEDB.1;Server=SQLC2;Persist Security Info=True;Password=SilmoMacro;User ID=ZCBN;</Value>
+    </Setting>
+    <Setting Name="ConSQLFactor" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=True;Initial Catalog=Factor;Data Source=PMSSQLC1\app;Password=Bgt56yhN;User ID=KEP\cssql2017;</Value>
+    </Setting>
+    <Setting Name="ChemFactor" Type="System.String" Scope="User">
+      <Value Profile="(Default)">c:\temp\</Value>
+    </Setting>
+    <Setting Name="NumContrat" Type="System.String" Scope="User">
+      <Value Profile="(Default)">020612</Value>
+    </Setting>
+    <Setting Name="DateDebutFactor" Type="System.DateTime" Scope="User">
+      <Value Profile="(Default)">2019-12-01</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
