@@ -11,7 +11,7 @@ Public Module Common
     Public Const RaisonSociale = "KEP TECHNOLOGIES"
     '    Public appXL As New Microsoft.Office.Interop.Excel.Application
     '    Dim sepDec As String = System.Globalization.CultureInfo.InstalledUICulture.NumberFormat.NumberDecimalSeparator
-
+    'TEST
 #Region "Factor"
     Function num2Fact(a As Integer, Nbcar As Integer) As String
         Return a.ToString.PadLeft(Nbcar, "0").Substring(0, Nbcar)
