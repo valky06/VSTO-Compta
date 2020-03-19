@@ -42,7 +42,7 @@ Public Class pFactor
 
         Me.letiersId = Me.lTiers.SelectedItem.value
         Me.gExport.Rows.Clear()
-        ssql = "Select top 30 exportid,exportdate from export where tiersid=" & Me.letiersId & " order by exportdate desc"
+        ssql = "Select top 30 exportid,exportdate from factor.export where tiersid=" & Me.letiersId & " order by exportdate desc"
         leRs = SqlLit(ssql, conSqlFactor)
         While leRs.Read
             Me.gExport.Rows.Add(leRs("ExportId"), leRs("ExportDate"))
@@ -72,7 +72,7 @@ Public Class pFactor
         Me.i_info.Enabled = (Me.i_info.Tag <> "")
         Try
             Call initialise()
-            Call ComboRempli("Select tiersid,tiersnom from tiers", Me.lTiers, conSqlFactor)
+            Call ComboRempli("Select tiersid,tiersnom from factor.tiers", Me.lTiers, conSqlFactor)
             Call listeOnglet(Nothing, Nothing)
         Catch ex As Exception
 
@@ -83,7 +83,7 @@ Public Class pFactor
         Dim f As New FrmTiers
         If Me.lTiers.SelectedIndex >= 0 Then
             f.leTiersid = Me.lTiers.SelectedItem.value
-            If f.ShowDialog = DialogResult.OK Then Call ComboRempli("Select tiersid,tiersnom from tiers", Me.lTiers, conSqlFactor)
+            If f.ShowDialog = DialogResult.OK Then Call ComboRempli("Select tiersid,tiersnom from factor.tiers", Me.lTiers, conSqlFactor)
         End If
     End Sub
 
@@ -128,7 +128,7 @@ Public Class pFactor
 
             'Cherche le Num d'export
             lexportId = 0
-            lers = SqlLit("select max(exportid) as exportId from export where year(exportdate)=" & Now.Year & " and tiersid=" & Me.letiersId, conSqlFactor)
+            lers = SqlLit("select max(exportid) as exportId from factor.export where year(exportdate)=" & Now.Year & " and tiersid=" & Me.letiersId, conSqlFactor)
             While lers.Read
                 lexportId = Nz(lers("exportid"), 0)
             End While
@@ -136,7 +136,7 @@ Public Class pFactor
             lexportid += 1
 
             'cherche les données client
-            lers = SqlLit("SELECT Siret,RaisonSociale FROM Tiers where tiersid=" & Me.letiersId, conSqlFactor)
+            lers = SqlLit("SELECT Siret,RaisonSociale FROM factor.Tiers where tiersid=" & Me.letiersId, conSqlFactor)
             While lers.Read
                 leSiret = lers("Siret")
                 Leclient = lers("RaisonSociale")
@@ -248,7 +248,7 @@ Public Class pFactor
             End Using
 
             If MsgBox("Enregistrer l'export ?", MsgBoxStyle.OkCancel, "Attention") = MsgBoxResult.Ok Then
-                ssql = "Insert into export (exportid,exportdate,ExportFile,tiersid) values(" & lexportId & ",'" & Now & "','" & lefichier & ".txt'," & letiersId & ")"
+                ssql = "Insert into factor.export (exportid,exportdate,ExportFile,tiersid) values(" & lexportId & ",'" & Now & "','" & lefichier & ".txt'," & letiersId & ")"
                 SqlDo(ssql, conSqlFactor)
                 wsource.Delete()
                 Me.bExport.Enabled = False

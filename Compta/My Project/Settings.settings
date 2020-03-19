@@ -6,7 +6,7 @@
       <Value Profile="(Default)">Provider=SQLOLEDB.1;Server=SQLC2;Persist Security Info=True;Password=SilmoMacro;User ID=ZCBN;</Value>
     </Setting>
     <Setting Name="ConSQLFactor" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=True;Initial Catalog=Factor;Data Source=PMSSQLC1\app;Password=Bgt56yhN;User ID=KEP\cssql2017;</Value>
+      <Value Profile="(Default)">Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=True;Initial Catalog=Apps;Data Source=PMSSQLC1\app;Password=Bgt56yhN;User ID=KEP\cssql2017;</Value>
     </Setting>
     <Setting Name="ChemFactor" Type="System.String" Scope="User">
       <Value Profile="(Default)">c:\temp\</Value>

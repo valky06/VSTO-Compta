@@ -37,13 +37,13 @@
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
-    <OldToolsVersion>4.0</OldToolsVersion>
+    <OldToolsVersion>12.0</OldToolsVersion>
     <VSTO_TrustAssembliesLocation>true</VSTO_TrustAssembliesLocation>
     <BootstrapperEnabled>true</BootstrapperEnabled>
     <PublishUrl>\\nasc1\data\ikep\deploiement\VSTO\Compta\</PublishUrl>
     <InstallUrl />
     <TargetCulture>fr</TargetCulture>
-    <ApplicationVersion>1.0.1.1</ApplicationVersion>
+    <ApplicationVersion>1.0.1.2</ApplicationVersion>
     <AutoIncrementApplicationRevision>false</AutoIncrementApplicationRevision>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>0</UpdateInterval>
@@ -185,7 +185,7 @@
     This section specifies references for the project.
   -->
   <ItemGroup>
-    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="Microsoft.Office.Tools, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -195,7 +195,7 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.Tools.Applications.Runtime, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
-    <Reference Include="Office, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+    <Reference Include="Office, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -361,7 +361,7 @@
   <ProjectExtensions>
     <VisualStudio>
       <FlavorProperties GUID="{BAA0C2D2-18E2-41B9-852F-F413020CAA33}">
-        <ProjectProperties HostName="Excel" HostPackage="{20A848B8-E01F-4801-962E-25DB0FF57389}" OfficeVersion="14.0" VstxVersion="4.0" ApplicationType="Excel" Language="vb" TemplatesPath="VSTOTemplates" DebugInfoExeName="#Software\Microsoft\Office\14.0\Excel\InstallRoot\Path#excel.exe" AddItemTemplatesGuid="{DCFE8D25-4715-4C33-9EAB-A34A9EBC9544}" />
+        <ProjectProperties HostName="Excel" HostPackage="{29A7B9D7-A7F1-4328-8EF0-6B2D1A56B2C1}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="Excel" Language="vb" TemplatesPath="VSTOTemplates" DebugInfoExeName="#Software\Microsoft\Office\16.0\Excel\InstallRoot\Path#excel.exe" DebugInfoCommandLine="/x " AddItemTemplatesGuid="{DCFE8D25-4715-4C33-9EAB-A34A9EBC9544}" />
         <Host Name="Excel" PublishedHash="69C324AB27932AA2FBF2B7EA72250886FF164DE6" IconIndex="0">
           <HostItem Name="ThisAddIn" Code="CompoXLCompta.vb" CanonicalName="AddIn" PublishedHash="1732FEDC4E04321472B7752D1C1381C588A629D7" CanActivate="false" IconIndex="1" Blueprint="CompoXLCompta.Designer.xml" GeneratedCode="CompoXLCompta.Designer.vb" />
         </Host>

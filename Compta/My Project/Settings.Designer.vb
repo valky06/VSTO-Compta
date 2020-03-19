@@ -69,7 +69,7 @@ Partial Friend NotInheritable Class MySettings
     <Global.System.Configuration.UserScopedSettingAttribute(),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.Configuration.DefaultSettingValueAttribute("Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=True;Initial C"& _ 
-        "atalog=Factor;Data Source=PMSSQLC1\app;Password=Bgt56yhN;User ID=KEP\cssql2017;")>  _
+        "atalog=Apps;Data Source=PMSSQLC1\app;Password=Bgt56yhN;User ID=KEP\cssql2017;")>  _
     Public Property ConSQLFactor() As String
         Get
             Return CType(Me("ConSQLFactor"),String)

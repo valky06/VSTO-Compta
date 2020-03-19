@@ -120,22 +120,22 @@ Public Class pTVA
 
             'APP.Workbooks(Me.cFTVA.Text).Worksheets.Count
 
-            ssql = "Select FAAE.NumeroFacture + FAAE.NoFacture As PIeceTot, FAAE.NumeroFacture, FAAE.NoFacture, FAAE.CodeFournisseur, FAAE.DateEffetPiece, FAAE.NomFournisseur, FAAE.MontantHtRemise, FAAE.MontantFrancsTva1, " _
+            ssql = "Select FAAE.NumeroFacture + '-' + FAAE.NoFacture As PIeceTot, FAAE.NumeroFacture, FAAE.NoFacture, FAAE.CodeFournisseur, FAAE.DateEffetPiece, FAAE.NomFournisseur, FAAE.MontantHtRemise, FAAE.MontantFrancsTva1, " _
             & " FAAE.MontantFrancsTva2, FAAE.MontantFrancsTva3, FAAE.MontantFrancsTva4, FAAE.MontantFrancsTva5, FAAE.DateFacturation, FAAE.CompteGeneTva1, FAAE.CompteGeneTva2, " _
             & " FAAE.CompteGeneTva3, FAAE.CompteGeneTva4, FAAE.CompteGeneTva5, FAAE.CompteGeneTva6, FOU.CompteFournisseur,'SOU' as Site" _
             & " FROM KTISSOUCY.dbo.FAAE LEFT JOIN KTISSOUCY.dbo.FOU On FAAE.CodeFournisseur = FOU.CodeFournisseur WHERE     (YEAR(FAAE.DateFacturation) = " & Me.tAnnee.Text & ")" _
             & " UNION " _
-            & " Select FAAE.NumeroFacture + FAAE.NoFacture As PIeceTot, FAAE.NumeroFacture, FAAE.NoFacture, FAAE.CodeFournisseur, FAAE.DateEffetPiece, FAAE.NomFournisseur, FAAE.MontantHtRemise, FAAE.MontantFrancsTva1, " _
+            & " Select FAAE.NumeroFacture + '-' +  FAAE.NoFacture As PIeceTot, FAAE.NumeroFacture, FAAE.NoFacture, FAAE.CodeFournisseur, FAAE.DateEffetPiece, FAAE.NomFournisseur, FAAE.MontantHtRemise, FAAE.MontantFrancsTva1, " _
             & " FAAE.MontantFrancsTva2, FAAE.MontantFrancsTva3, FAAE.MontantFrancsTva4, FAAE.MontantFrancsTva5, FAAE.DateFacturation, FAAE.CompteGeneTva1, FAAE.CompteGeneTva2, " _
             & " FAAE.CompteGeneTva3, FAAE.CompteGeneTva4, FAAE.CompteGeneTva5, FAAE.CompteGeneTva6, FOU.CompteFournisseur,'LAX' as Site" _
             & " FROM KTISLAXOU.dbo.FAAE LEFT JOIN KTISLAXOU.dbo.FOU On FAAE.CodeFournisseur = FOU.CodeFournisseur WHERE     (YEAR(FAAE.DateFacturation) = " & Me.tAnnee.Text & ")" _
             & " UNION " _
-            & " Select FAAE.NumeroFacture + FAAE.NoFacture As PIeceTot, FAAE.NumeroFacture, FAAE.NoFacture, FAAE.CodeFournisseur, FAAE.DateEffetPiece, FAAE.NomFournisseur, FAAE.MontantHtRemise, FAAE.MontantFrancsTva1, " _
+            & " Select FAAE.NumeroFacture + '-' + FAAE.NoFacture As PIeceTot, FAAE.NumeroFacture, FAAE.NoFacture, FAAE.CodeFournisseur, FAAE.DateEffetPiece, FAAE.NomFournisseur, FAAE.MontantHtRemise, FAAE.MontantFrancsTva1, " _
             & " FAAE.MontantFrancsTva2, FAAE.MontantFrancsTva3, FAAE.MontantFrancsTva4, FAAE.MontantFrancsTva5, FAAE.DateFacturation, FAAE.CompteGeneTva1, FAAE.CompteGeneTva2, " _
             & " FAAE.CompteGeneTva3, FAAE.CompteGeneTva4, FAAE.CompteGeneTva5, FAAE.CompteGeneTva6, FOU.CompteFournisseur,'BEN' as Site" _
             & " FROM APL.dbo.FAAE LEFT JOIN APL.dbo.FOU On FAAE.CodeFournisseur = FOU.CodeFournisseur WHERE     (YEAR(FAAE.DateFacturation) = " & Me.tAnnee.Text & ")" _
             & " UNION " _
-            & " Select FAAE.NumeroFacture + FAAE.NoFacture As PIeceTot, FAAE.NumeroFacture, FAAE.NoFacture, FAAE.CodeFournisseur, FAAE.DateEffetPiece, FAAE.NomFournisseur, FAAE.MontantHtRemise, FAAE.MontantFrancsTva1, " _
+            & " Select FAAE.NumeroFacture + '-' + FAAE.NoFacture As PIeceTot, FAAE.NumeroFacture, FAAE.NoFacture, FAAE.CodeFournisseur, FAAE.DateEffetPiece, FAAE.NomFournisseur, FAAE.MontantHtRemise, FAAE.MontantFrancsTva1, " _
             & " FAAE.MontantFrancsTva2, FAAE.MontantFrancsTva3, FAAE.MontantFrancsTva4, FAAE.MontantFrancsTva5, FAAE.DateFacturation, FAAE.CompteGeneTva1, FAAE.CompteGeneTva2, " _
             & " FAAE.CompteGeneTva3, FAAE.CompteGeneTva4, FAAE.CompteGeneTva5, FAAE.CompteGeneTva6, FOU.CompteFournisseur,'CAS' as Site" _
             & " FROM KMTM.dbo.FAAE LEFT JOIN KMTM.dbo.FOU On FAAE.CodeFournisseur = FOU.CodeFournisseur WHERE   (YEAR(FAAE.DateFacturation) = " & Me.tAnnee.Text & ")"
@@ -284,6 +284,7 @@ Public Class pTVA
         Call MEF_GL()
         Call ImporteEcrit()
         Call RECUPTVA()
+        'todo
     End Sub
 
     Private Sub TAnnee_TextChanged(sender As Object, e As EventArgs) Handles tAnnee.TextChanged
